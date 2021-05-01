@@ -2,11 +2,11 @@
 #include <string.h>
 
 typedef struct{
-	char name[60];
+    char name[60];
     char type[60];
     int year;
     int month;
-	int weight;
+    int weight;
     int age;
     char character[60];
     bool vaccine;
