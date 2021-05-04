@@ -19,15 +19,15 @@ int deleteData(Dog *d){
 
 int selectMenu(){
     int menu;
-    printf("\n*** ë³´í˜¸ê²¬ ëª©ë¡ ***\n");
-    printf("1. ì¡°íšŒ\n");
-    printf("2. ì¶”ê°€\n");
-    printf("3. ìˆ˜ì •\n");
-    printf("4. ì‚­ì œ\n");
-    printf("5. ì €ìž¥\n");
-    printf("6. ë¶ˆëŸ¬ì˜¤ê¸°\n");
-    printf("0. ì¢…ë£Œ\n\n");
-    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+    printf("\n*** º¸È£°ß ¸ñ·Ï ***\n");
+    printf("1. Á¶È¸\n");
+    printf("2. Ãß°¡\n");
+    printf("3. ¼öÁ¤\n");
+    printf("4. »èÁ¦\n");
+    printf("5. ÀúÀå\n");
+    printf("6. ºÒ·¯¿À±â\n");
+    printf("0. Á¾·á\n\n");
+    printf("=> ¿øÇÏ´Â ¸Þ´º´Â? ");
     scanf("%d", &menu);
     return menu;
 }
