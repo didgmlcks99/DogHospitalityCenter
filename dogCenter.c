@@ -17,7 +17,7 @@ int main(void){
         if(menu == 0) break;
         if(menu == 1 || menu ==3 || menu == 4){	
 		    if (count==0){ 
-                printf(" 데이터가 없습니다!\n");
+                printf("=>데이터가 없습니다!\n");
 			    continue;
 			}
 		}

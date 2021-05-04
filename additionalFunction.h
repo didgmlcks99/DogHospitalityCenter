@@ -1,4 +1,4 @@
-#include "basicfunction.h"
+#include "basicFunction.h"
 
 int searchAge(Dog *d, int count);
 int searchDate(Dog *d, int count);
