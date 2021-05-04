@@ -9,8 +9,8 @@ typedef struct{
     int weight;
     int age;
     char character[60];
-    bool vaccine;
-    bool neutralization;
+    char vaccine[10];
+    char neutralization[10];
     char foundIn[60];
 } Dog;
 
