@@ -5,7 +5,7 @@ int addDog(Dog *d){
 }
 
 void readData(Dog *d){
-
+    printf("%15s %20s %d/%d %dkg %dyrs %s %s %s %s\n", d->name, d->type, d->year, d->month, d->weight, d->age, d->character, d->vaccine, d->neutralization, d->foundIn);
 }
 
 int updateData(Dog *d){
@@ -33,7 +33,14 @@ int selectMenu(){
 }
 
 void listData(Dog *d,int count){
-
+    printf("\nNo. Name Type enterDate weight age character vaccine neutralization foundIn\n");
+    printf("================================================================================\n");
+    for(int i=0; i<count; i++){
+        if( d[i].weight == -1 || d[i].price == -1 ) continue;
+        printf("%2d.", i+1);
+        readProduct(&d[i]);
+    }
+    printf("\n");
 }
 
 int selectDataNo(Dog *d, int count){
