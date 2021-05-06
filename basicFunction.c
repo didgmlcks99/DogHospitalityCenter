@@ -1,6 +1,35 @@
 #include "basicFunction.h"
 
 int addDog(Dog *d){
+    printf("\n");
+    printf("이름? ");
+    scanf("%[^\n]s",d->name);
+
+    printf("강아지 종? ");
+    scanf("%[^\n]s", d->type);
+
+    printf("센터 들어온 년/월? ");
+    scanf("%d %d", &d->year, &d->month);
+
+    printf("무게? ");
+    scanf("%d", &d->weight);
+
+    printf("나이? ");
+    scanf("%d", &d->age);
+
+    printf("성향? ");
+    scanf("%[^\n]s", d->character);
+
+    printf("예방주사 접촉 여부? ");
+    scanf("%[^\n]s", d->vaccine);
+
+    printf("중성화 유뮤? ");
+    scanf("%[^\n]s", d->neutralization);
+
+    printf("발견 (시)? ");
+    scanf("%[^\n]s", d->foundIn);
+    
+    printf("==> 추가됨\n"); 
     return 1;
 }
 
@@ -17,9 +46,9 @@ int updateData(Dog *d){
     scanf("%[^\n]s", d->type);
 
     printf("센터 들어온 년/월? ");
-    scanf("%d %d", &d->year, &d->weight);
+    scanf("%d %d", &d->year, &d->month);
 
-    printf("무개? ");
+    printf("무게? ");
     scanf("%d", &d->weight);
 
     printf("나이? ");
@@ -34,7 +63,7 @@ int updateData(Dog *d){
     printf("중성화 유뮤? ");
     scanf("%[^\n]s", d->neutralization);
 
-    printf("발견 (시)ㄴ? ");
+    printf("발견 (시)? ");
     scanf("%[^\n]s", d->foundIn);
 
     printf("==> 수정됨!\n");
@@ -43,7 +72,17 @@ int updateData(Dog *d){
 }
 
 int deleteData(Dog *d){
-    return 1;
+    d->type = "-1";
+    d->year = -1;
+    d->month = -1;
+    d->weight = -1;
+    d->age = -1;
+    d->character = "-1"
+    d->vaccine = "-1"
+    d->neutraliztion = "-1"
+    d->foundIn="-1";
+    printf("==> 삭제됨!\n");
+    return 0;
 }
 
 
