@@ -9,6 +9,36 @@ void readData(Dog *d){
 }
 
 int updateData(Dog *d){
+    printf("\n");
+    printf("이름? ");
+    scanf("%[^\n]s", d->name);
+
+    printf("강아지 종? ");
+    scanf("%[^\n]s", d->type);
+
+    printf("센터 들어온 년/월? ");
+    scanf("%d %d", &d->year, &d->weight);
+
+    printf("무개? ");
+    scanf("%d", &d->weight);
+
+    printf("나이? ");
+    scanf("%d", &d->age);
+
+    printf("성향? ");
+    scanf("%[^\n]s", d->character);
+
+    printf("예방주사 접촉 여부? ");
+    scanf("%[^\n]s", d->vaccine);
+
+    printf("중성화 유뮤? ");
+    scanf("%[^\n]s", d->neutralization);
+
+    printf("발견 (시)ㄴ? ");
+    scanf("%[^\n]s", d->foundIn);
+
+    printf("==> 수정됨!\n");
+    
     return 1;
 }
 
