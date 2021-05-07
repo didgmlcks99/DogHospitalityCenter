@@ -5,8 +5,12 @@ int addDog(Dog *d){
     printf("이름? ");
     scanf("%[^\n]s",d->name);
 
+    getchar();
+
     printf("강아지 종? ");
     scanf("%[^\n]s", d->type);
+
+    getchar();
 
     printf("센터 들어온 년/월? ");
     scanf("%d %d", &d->year, &d->month);
@@ -20,14 +24,22 @@ int addDog(Dog *d){
     printf("성향? ");
     scanf("%[^\n]s", d->character);
 
+    getchar();
+
     printf("예방주사 접촉 여부? ");
     scanf("%[^\n]s", d->vaccine);
+
+    getchar();
 
     printf("중성화 유뮤? ");
     scanf("%[^\n]s", d->neutralization);
 
+    getchar();
+
     printf("발견 (시)? ");
     scanf("%[^\n]s", d->foundIn);
+
+    getchar();
     
     printf("==> 추가됨\n"); 
     return 1;
@@ -42,8 +54,12 @@ int updateData(Dog *d){
     printf("이름? ");
     scanf("%[^\n]s", d->name);
 
+    getchar();
+
     printf("강아지 종? ");
     scanf("%[^\n]s", d->type);
+
+    getchar();
 
     printf("센터 들어온 년/월? ");
     scanf("%d %d", &d->year, &d->month);
@@ -57,14 +73,22 @@ int updateData(Dog *d){
     printf("성향? ");
     scanf("%[^\n]s", d->character);
 
+    getchar();
+
     printf("예방주사 접촉 여부? ");
     scanf("%[^\n]s", d->vaccine);
+
+    getchar();
 
     printf("중성화 유뮤? ");
     scanf("%[^\n]s", d->neutralization);
 
+    getchar();
+
     printf("발견 (시)? ");
     scanf("%[^\n]s", d->foundIn);
+
+    getchar();
 
     printf("==> 수정됨!\n");
     
