@@ -2,34 +2,34 @@
 
 int addDog(Dog *d){
     printf("\n");
-    printf("ÀÌ¸§? ");
+    printf("ì´ë¦„? ");
     scanf("%[^\n]s",d->name);
 
-    printf("°­¾ÆÁö Á¾? ");
+    printf("ê°•ì•„ì§€ ì¢…? ");
     scanf("%[^\n]s", d->type);
 
-    printf("¼¾ÅÍ µé¾î¿Â ³â/¿ù? ");
+    printf("ì„¼í„° ë“¤ì–´ì˜¨ ë…„/ì›”? ");
     scanf("%d %d", &d->year, &d->month);
 
-    printf("¹«°Ô? ");
+    printf("ë¬´ê²Œ? ");
     scanf("%d", &d->weight);
 
-    printf("³ªÀÌ? ");
+    printf("ë‚˜ì´? ");
     scanf("%d", &d->age);
 
-    printf("¼ºÇâ? ");
+    printf("ì„±í–¥? ");
     scanf("%[^\n]s", d->character);
 
-    printf("¿¹¹æÁÖ»ç Á¢ÃË ¿©ºÎ? ");
+    printf("ì˜ˆë°©ì£¼ì‚¬ ì ‘ì´‰ ì—¬ë¶€? ");
     scanf("%[^\n]s", d->vaccine);
 
-    printf("Áß¼ºÈ­ À¯¹Â? ");
+    printf("ì¤‘ì„±í™” ìœ ë®¤? ");
     scanf("%[^\n]s", d->neutralization);
 
-    printf("¹ß°ß (½Ã)? ");
+    printf("ë°œê²¬ (ì‹œ)? ");
     scanf("%[^\n]s", d->foundIn);
     
-    printf("==> Ãß°¡µÊ\n"); 
+    printf("==> ì¶”ê°€ë¨\n"); 
     return 1;
 }
 
@@ -39,34 +39,34 @@ void readData(Dog *d){
 
 int updateData(Dog *d){
     printf("\n");
-    printf("ÀÌ¸§? ");
+    printf("ì´ë¦„? ");
     scanf("%[^\n]s", d->name);
 
-    printf("°­¾ÆÁö Á¾? ");
+    printf("ê°•ì•„ì§€ ì¢…? ");
     scanf("%[^\n]s", d->type);
 
-    printf("¼¾ÅÍ µé¾î¿Â ³â/¿ù? ");
+    printf("ì„¼í„° ë“¤ì–´ì˜¨ ë…„/ì›”? ");
     scanf("%d %d", &d->year, &d->month);
 
-    printf("¹«°Ô? ");
+    printf("ë¬´ê²Œ? ");
     scanf("%d", &d->weight);
 
-    printf("³ªÀÌ? ");
+    printf("ë‚˜ì´? ");
     scanf("%d", &d->age);
 
-    printf("¼ºÇâ? ");
+    printf("ì„±í–¥? ");
     scanf("%[^\n]s", d->character);
 
-    printf("¿¹¹æÁÖ»ç Á¢ÃË ¿©ºÎ? ");
+    printf("ì˜ˆë°©ì£¼ì‚¬ ì ‘ì´‰ ì—¬ë¶€? ");
     scanf("%[^\n]s", d->vaccine);
 
-    printf("Áß¼ºÈ­ À¯¹Â? ");
+    printf("ì¤‘ì„±í™” ìœ ë®¤? ");
     scanf("%[^\n]s", d->neutralization);
 
-    printf("¹ß°ß (½Ã)? ");
+    printf("ë°œê²¬ (ì‹œ)? ");
     scanf("%[^\n]s", d->foundIn);
 
-    printf("==> ¼öÁ¤µÊ!\n");
+    printf("==> ìˆ˜ì •ë¨!\n");
     
     return 1;
 }
@@ -76,22 +76,22 @@ int deleteData(Dog *d){
     d->month = -1;
     d->weight = -1;
     d->age = -1;
-    printf("==> »èÁ¦µÊ!\n");
+    printf("==> ì‚­ì œë¨!\n");
     return 0;
 }
 
 
 int selectMenu(){
     int menu;
-    printf("\n*** º¸È£°ß ¸ñ·Ï ***\n");
-    printf("1. Á¶È¸\n");
-    printf("2. Ãß°¡\n");
-    printf("3. ¼öÁ¤\n");
-    printf("4. »èÁ¦\n");
-    printf("5. ÀúÀå\n");
-    printf("6. ºÒ·¯¿À±â\n");
-    printf("0. Á¾·á\n\n");
-    printf("=> ¿øÇÏ´Â ¸Ş´º´Â? ");
+    printf("\n*** ë³´í˜¸ê²¬ ëª©ë¡ ***\n");
+    printf("1. ì¡°íšŒ\n");
+    printf("2. ì¶”ê°€\n");
+    printf("3. ìˆ˜ì •\n");
+    printf("4. ì‚­ì œ\n");
+    printf("5. ì €ì¥\n");
+    printf("6. ë¶ˆëŸ¬ì˜¤ê¸°\n");
+    printf("0. ì¢…ë£Œ\n\n");
+    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
     scanf("%d", &menu);
     return menu;
 }
@@ -110,7 +110,7 @@ void listData(Dog *d,int count){
 int selectDataNo(Dog *d, int count){
     int no;
     listData(d ,count);
-    printf("¹øÈ£´Â (Ãë¼Ò:0)?");
+    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
     scanf("%d", &no);
     getchar();
     return no;
