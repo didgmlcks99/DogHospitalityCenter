@@ -21,6 +21,8 @@ int addDog(Dog *d){
     printf("나이? ");
     scanf("%d", &d->age);
 
+    getchar();
+
     printf("성향? ");
     scanf("%[^\n]s", d->character);
 
@@ -69,6 +71,8 @@ int updateData(Dog *d){
 
     printf("나이? ");
     scanf("%d", &d->age);
+
+    getchar();
 
     printf("성향? ");
     scanf("%[^\n]s", d->character);
@@ -134,7 +138,7 @@ void listData(Dog *d,int count){
 int selectDataNo(Dog *d, int count){
     int no;
     listData(d ,count);
-    printf("번호는 (취소:0)?");
+    printf("번호는 (취소:0)? ");
     scanf("%d", &no);
     getchar();
     return no;
