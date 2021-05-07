@@ -72,15 +72,10 @@ int updateData(Dog *d){
 }
 
 int deleteData(Dog *d){
-    d->type = "-1";
     d->year = -1;
     d->month = -1;
     d->weight = -1;
     d->age = -1;
-    d->character = "-1"
-    d->vaccine = "-1"
-    d->neutraliztion = "-1"
-    d->foundIn="-1";
     printf("==> ªË¡¶µ !\n");
     return 0;
 }
@@ -105,9 +100,9 @@ void listData(Dog *d,int count){
     printf("\nNo. Name Type enterDate weight age character vaccine neutralization foundIn\n");
     printf("================================================================================\n");
     for(int i=0; i<count; i++){
-        if( d[i].weight == -1 || d[i].price == -1 ) continue;
+        if( d[i].weight == -1 || d[i].age == -1 ) continue;
         printf("%2d.", i+1);
-        readProduct(&d[i]);
+        readData(&d[i]);
     }
     printf("\n");
 }
