@@ -108,7 +108,12 @@ void listData(Dog *d,int count){
 }
 
 int selectDataNo(Dog *d, int count){
-    return 1;
+    int no;
+    listProduct(d ,count);
+    printf("번호는 (취소:0)?");
+    scanf("%d", &no);
+    getchar();
+    return no;
 }
 
 
