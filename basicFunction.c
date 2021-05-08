@@ -48,7 +48,7 @@ int addDog(Dog *d){
 }
 
 void readData(Dog *d){
-    printf("%15s %s %s %d/%d %d살 %s %s\n", d->name, d->type, d->year, d->month, d->age, d->vaccine, d->neutralization);
+    printf("%15s    %s    %s    %d/%d    %d살    %s    %s\n", d->name, d->type, d->year, d->month, d->age, d->vaccine, d->neutralization);
 }
 
 int updateData(Dog *d){
@@ -111,8 +111,8 @@ int selectMenu(){
 }
 
 void listData(Dog *d,int count){
-    printf("\nNo. 이름 견종 들어온날짜 나이 예방접종여부 중성화유뮤\n");
-    printf("============================================\n");
+    printf("\nNo.   이름    견종    들어온날짜    나이    예방접종여부    중성화유뮤\n");
+    printf("===============================================================\n");
     for(int i=0; i<count; i++){
         if( d[i].year == -1 || d[i].age == -1 ) continue;
         printf("%2d.", i+1);
