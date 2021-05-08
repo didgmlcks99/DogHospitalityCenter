@@ -20,27 +20,25 @@ int addDog(Dog *d){
 
     getchar();
 
-    // do{
+    do{
         printf("예방주사 접촉 여부 (true/false)? ");
         scanf("%[^\n]s", d->vaccine);
-    //     if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
-    //         break;
-    //     }
-    //     printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
-    // }while(1);
+        getchar();
+        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+            break;
+        }
+        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+    }while(1);
 
-    getchar();
-
-    // do{
+    do{
         printf("중성화 유뮤(true/false)? ");
         scanf("%[^\n]s", d->neutralization);
-    //     if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
-    //         break;
-    //     }
-    //     printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
-    // }while(1);
-
-    getchar();
+        getchar();
+        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+            break;
+        }
+        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+    }while(1);
     
     printf("==> 추가됨\n"); 
     return 1;
