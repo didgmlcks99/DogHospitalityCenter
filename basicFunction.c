@@ -15,16 +15,8 @@ int addDog(Dog *d){
     printf("센터 들어온 년/월? ");
     scanf("%d %d", &d->year, &d->month);
 
-    printf("무게? ");
-    scanf("%d", &d->weight);
-
     printf("나이? ");
     scanf("%d", &d->age);
-
-    getchar();
-
-    printf("성향? ");
-    scanf("%[^\n]s", d->character);
 
     getchar();
 
@@ -35,11 +27,6 @@ int addDog(Dog *d){
 
     printf("중성화 유뮤? ");
     scanf("%[^\n]s", d->neutralization);
-
-    getchar();
-
-    printf("발견 (시)? ");
-    scanf("%[^\n]s", d->foundIn);
 
     getchar();
     
@@ -89,7 +76,6 @@ int updateData(Dog *d){
 int deleteData(Dog *d){
     d->year = -1;
     d->month = -1;
-    d->weight = -1;
     d->age = -1;
     printf("==> 삭제됨!\n");
     return 0;
