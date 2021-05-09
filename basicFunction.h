@@ -6,12 +6,9 @@ typedef struct{
     char type[60];
     int year;
     int month;
-    int weight;
     int age;
-    char character[60];
     char vaccine[10];
     char neutralization[10];
-    char foundIn[60];
 } Dog;
 
 int addDog(Dog *d);
@@ -23,5 +20,5 @@ int selectMenu();
 void listData(Dog *d,int count);
 int selectDataNo(Dog *d, int count);
 
-void saveData(Dog *d, int count);
+void saveData(Dog d[], int count);
 int loadData(Dog *d);
