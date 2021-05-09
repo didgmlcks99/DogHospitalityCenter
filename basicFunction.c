@@ -127,10 +127,41 @@ int selectDataNo(Dog *d, int count){
 }
 
 
-void saveData(Dog *d, int count){
+void saveData(Dog d[], int count){
+    FILE* fp;
+
+	fp= fopen("dog.txt","wt");
+	
+	for(int i = 0; i < count; i++) {
+		fprintf(fp, "%d %d %d %s %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].name, d[i].type, d[i].vaccine, d[i].neutralization);
+	}
+
+	fclose(fp);
+	printf("저장됨!\n");
 
 }
 
 int loadData(Dog *d){
+    int count=0;
+	FILE*fp;
+
+	fp = fopen("dog.txt", "r");
+
+	while( fscanf(fp, "%d", &(d[count].year)) != -1) {
+		fscanf(fp, "%d ", &(d[count].month));
+        fscanf(fp, "%d ", &(d[count].age));
+		fgets(d[count].name, sizeof(d[count].name), fp);
+
+		int length = strlen(d[count].name);
+		d[count].name[length -1] = '\0';
+
+		count++;
+	}
+
+
+
+	printf("=> 로딩 성공!\n");
+	return count;
+
     return 1;
 }
