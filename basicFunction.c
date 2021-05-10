@@ -100,6 +100,9 @@ int selectMenu(){
     printf("3. 수정\n");
     printf("4. 삭제\n");
     printf("5. 저장\n");
+    printf("6. 지정 견종인 강아지 정보 검색\n");
+    printf("7. 지정 나이 보다 동일하거나 더 어린 강아지 정보 겁색\n");
+    printf("8. 지정 날짜와 동일하거나 더 최근에 들어온 강아지 정보 검색\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);

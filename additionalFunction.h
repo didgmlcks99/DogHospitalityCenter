@@ -1,5 +1,5 @@
 #include "basicFunction.h"
 
-int searchAge(Dog *d, int count);
-int searchDate(Dog *d, int count);
-int searchFound(Dog *d, int count);
+void searchType(Dog *d, int count);
+void searchAge(Dog *d, int count);
+void searchDateEntered(Dog *d, int count);
