@@ -12,8 +12,24 @@ int addDog(Dog *d){
 
     getchar();
 
-    printf("센터 들어온 년/월? ");
-    scanf("%d %d", &d->year, &d->month);
+    do{
+        printf("센터 들어온 년/월? ");
+        scanf("%d %d", &d->year, &d->month);
+
+        if(d->year<=0 || d->month<=0){
+            printf("\n=> 음수 및 0 날짜는 존재 하지 않습니다.\n");
+        }else if(d->year<=2021){
+            if(d->year==2021){
+                if(d->month<=5){
+                    break;
+                }
+            }else if(d->year<2021){
+                if(d->month<=12){
+                    break;
+                }
+            }
+        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+    }while(1);
 
     printf("나이? ");
     scanf("%d", &d->age);
@@ -34,7 +50,7 @@ int addDog(Dog *d){
         printf("중성화 유뮤(true/false)? ");
         scanf("%[^\n]s", d->neutralization);
         getchar();
-        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+        if(strcmp(d->neutralization, "true")==0 || strcmp(d->neutralization, "false")==0){
             break;
         }
         printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
@@ -60,23 +76,49 @@ int updateData(Dog *d){
 
     getchar();
 
-    printf("센터 들어온 년/월? ");
-    scanf("%d %d", &d->year, &d->month);
+    do{
+        printf("센터 들어온 년/월? ");
+        scanf("%d %d", &d->year, &d->month);
+
+        if(d->year<=0 || d->month<=0){
+            printf("\n=> 음수 및 0 날짜는 존재 하지 않습니다.\n");
+        }else if(d->year<=2021){
+            if(d->year==2021){
+                if(d->month<=5){
+                    break;
+                }
+            }else if(d->year<2021){
+                if(d->month<=12){
+                    break;
+                }
+            }
+        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+    }while(1);
 
     printf("나이? ");
     scanf("%d", &d->age);
 
     getchar();
 
-    printf("예방주사 접촉 여부? ");
-    scanf("%[^\n]s", d->vaccine);
+    do{
+        printf("예방주사 접촉 여부 (true/false)? ");
+        scanf("%[^\n]s", d->vaccine);
+        getchar();
+        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+            break;
+        }
+        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+    }while(1);
 
-    getchar();
-
-    printf("중성화 유뮤? ");
-    scanf("%[^\n]s", d->neutralization);
-
-    getchar();
+    do{
+        printf("중성화 유뮤(true/false)? ");
+        scanf("%[^\n]s", d->neutralization);
+        getchar();
+        if(strcmp(d->neutralization, "true")==0 || strcmp(d->neutralization, "false")==0){
+            break;
+        }
+        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+    }while(1);
 
     printf("==> 수정됨!\n");
     

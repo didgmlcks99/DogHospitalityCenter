@@ -53,21 +53,21 @@ int main(void){
 	    // }
         // else if(menu == 6){
 		// 	if(count > 0){
-		// 		searchType(dlist, index);
+		// 		searchType(dlist, count);
 		// 	}else{
 		// 		printf("=> 강아지 정보 (견종) 검색할 데이터 없습니다.\n");
 		// 	}
 		// }
         // else if(menu == 7){
 		// 	if(count > 0){
-		// 		searchbyAge(dlist, index);
+		// 		searchbyAge(dlist, count);
 		// 	}else{
 		// 		printf("=> 강아지 정보 (나이) 검색할 데이터 없습니다.\n");
 		// 	}
 		// }
         else if(menu == 8){
 			if(count > 0){
-				searchDateEntered(dlist, index);
+				searchDateEntered(dlist, count);
 			}else{
 				printf("=> 강이지 정보 (날짜) 검색할 데이터 없습니다.\n");
 			}

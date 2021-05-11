@@ -1,31 +1,55 @@
 #include "additionalFunction.h"
 
 void searchAge(Dog *d, int count){
-    return 1;
 }
 
 void searchDate(Dog *d, int count){
-    return 1;
 }
 
 void searchDateEntered(Dog *d, int count){
-    // int scnt = 0;
-	// float bound_year;
-    // float bound_month;
+    int scnt = 0;
 
-	// printf("(해당 날짜보다 같거나 더 최근에 들어온 강아지 정보 출력)\n");
-	// printf("원하는 날짜 입력 (달/월) : ");
-	// scanf("%D", &bound_year, &bound_month);
+	int bound_year;
+    int bound_month;
 
-	// printf("****************************************************************\n");
+	do{
+		printf("(해당 날짜보다 같거나 더 최근에 들어온 강아지 정보 출력)\n");
+        printf("원하는 날짜 입력 (달/월) : ");
+        scanf("%d %d", &bound_year, &bound_month);
 
-	// for(int i = 0; i < index; i++){
-	// 	if(p[i].price < 0) continue;
-	// 	if(p[i].rate >= boundRate){
-	// 		printf("%d    ", i+1);
-	// 		printProduct(p[i]);
-	// 		scnt++;
-	// 	}   
-	// }
-	// if(scnt == 0) printf("=> 해당 별점보다 높거나 같은 제품 없음\n");
+        if(bound_year<=0 || bound_month<=0){
+            printf("\n=> 음수 및 0 날짜는 존재 하지 않습니다.\n");
+        }else if(bound_year<=2021){
+            if(bound_year==2021){
+                if(bound_month<=5){
+                    break;
+                }
+            }else if(bound_year<2021){
+                if(bound_month<=12){
+                    break;
+                }
+            }
+        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+    }while(1);
+
+	printf("\nNo. %10s %13s %20s %10s %20s %20s\n", "이름", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
+    printf("==========================================================================================\n");
+
+	for(int i = 0; i < count; i++){
+		if(d[i].month < 0) continue;
+		if(d[i].year >= bound_year){
+			if(d[i].year == bound_year){
+				if(d[i].month >= bound_month){
+					printf("%2d.", i+1);
+					readData(&d[i]);
+					scnt++;
+				}
+			}else{
+				printf("%2d.", i+1);
+				readData(&d[i]);
+				scnt++;
+			}
+		}
+	}
+	if(scnt == 0) printf("=> 해당 날짜보다 동일하거 최근에 들어온 강아지 없음\n");
 }
