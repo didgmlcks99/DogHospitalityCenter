@@ -31,8 +31,15 @@ int addDog(Dog *d){
         }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
     }while(1);
 
-    printf("나이? ");
-    scanf("%d", &d->age);
+    do{
+        printf("나이? ");
+        scanf("%d", &d->age);
+
+        if(d->age >= 0){
+            break;
+        }
+        printf("\n==> 나이 음수로 될 수 없습니다.\n");
+    }while(1);
 
     getchar();
 
@@ -95,8 +102,15 @@ int updateData(Dog *d){
         }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
     }while(1);
 
-    printf("나이? ");
-    scanf("%d", &d->age);
+    do{
+        printf("나이? ");
+        scanf("%d", &d->age);
+
+        if(d->age >= 0){
+            break;
+        }
+        printf("\n==> 나이 음수로 될 수 없습니다.\n");
+    }while(1);
 
     getchar();
 
