@@ -1,9 +1,35 @@
 #include "additionalFunction.h"
 
-void searchAge(Dog *d, int count){
+void searchType(Dog *d, int count){
 }
 
-void searchDate(Dog *d, int count){
+void searchAge(Dog *d, int count){
+	int scnt = 0;
+
+	int bound_age;
+
+	do{
+		printf("(해당 나이와 같거나 더 어린 강아지 정보 출력)\n");
+        printf("나이? ");
+        scanf("%d", &bound_age);
+
+        if(d->age >= 0){
+            break;
+        }
+        printf("\n==> 나이 음수로 될 수 없습니다.\n");
+    }while(1);
+
+	printf("\nNo. %10s %13s %20s %10s %21s %20s\n", "이름", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
+    printf("==========================================================================================\n");
+
+	for(int i = 0; i < count; i++){
+		if(d[i].month < 0) continue;
+		if(d[i].age <= bound_age){
+			printf("%2d.", i+1);
+			readData(&d[i]);
+			scnt++;
+		}
+	}
 }
 
 void searchDateEntered(Dog *d, int count){
@@ -13,7 +39,7 @@ void searchDateEntered(Dog *d, int count){
     int bound_month;
 
 	do{
-		printf("(해당 날짜보다 같거나 더 최근에 들어온 강아지 정보 출력)\n");
+		printf("(해당 날짜와 같거나 더 최근에 들어온 강아지 정보 출력)\n");
         printf("원하는 날짜 입력 (달/월) : ");
         scanf("%d %d", &bound_year, &bound_month);
 
