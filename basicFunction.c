@@ -173,58 +173,52 @@ int selectDataNo(Dog *d, int count){
     return no;
 }
 
-
 void saveData(Dog d[], int count){
-    // FILE* fp;
+    FILE* fp;
 
-	// fp= fopen("dog.txt","wt");
+	fp= fopen("dog.txt","wt");
 	
-	// for(int i = 0; i < count; i++) {
-    //     fprintf(fp, "%s\n", d[i].name);
-    //     fprintf(fp, "%s\n", d[i].type);
-	// 	fprintf(fp, "%d %d %d %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].type, d[i].vaccine, d[i].neutralization);
-	// }
+	for(int i = 0; i < count; i++) {
+        if(d[count].year < 0) continue; //?
+		fprintf(fp, "%d %d %d %c %c %s\n", d[i].year, d[i].month, d[i].age, d[i].vaccine, d[i].neutralization, d[i].type);
+	}
 
-	// fclose(fp);
-	// printf("저장됨!\n");
+	fclose(fp);
+	printf("저장됨!\n");
+
 }
 
 int loadData(Dog *d){
-    // int count=0;
-	// FILE*fp;
+    int count=0;
+	FILE*fp;
 
-	// fp = fopen("dog.txt", "r");
+	fp = fopen("dog.txt", "r");
 
-    // if(fp == NULL) {
-    //     printf("=> 로딩 실패!\n");
-    //     return count;
-    // }
+    if(fp == NULL) {
+        printf("=> 파일 없음!\n");
+        return count;
+    }
 
-	// while( fscanf(fp, "%d", &(d[count].year)) != -1) {
-    //     fgets(d[count].name, sizeof(d[count].name), fp);
-    //     fgets(d[count].type, sizeof(d[count].name), fp);
-    //     fscanf(fp, "%d ", &(d[count].year));
-	// 	fscanf(fp, "%d ", &(d[count].month));
-    //     fscanf(fp, "%d ", &(d[count].age));
-    //     //d[count].vaccine = '\0'; 
-    //     //d[count].neutralization = '\0';
-		
+	while( count < 100 ) {
+        fscanf(fp, "%d ", &(d[count].year));
+        if(feof(fp)) break;
+		fscanf(fp, "%d ", &(d[count].month));
+        fscanf(fp, "%d ", &(d[count].age));
+        fscanf(fp, "%c ", &(d[count].vaccine));
+        fscanf(fp, "%c ", &(d[count].neutralization));
+        fscanf(fp, "%[^\n]s", d[count].type);
+        //fgets(d[count].type, sizeof(d[count].type), fp);
+	
+        //int length = strlen(d[count].type);
+		//d[count].type[length -1] = '\0';
 
-	// 	int length = strlen(d[count].name);
-	// 	d[count].name[length -1] = '\0';
+		count++;
+	}
 
-    //     length = strlen(d[count].type);
-	// 	d[count].type[length -1] = '\0';
+    fclose(fp);
 
-	// 	count++;
-	// }
-
-    // fclose(fp);
-
-
-
-	// printf("=> 로딩 성공!\n");
-	// return count;
+	printf("=> 로딩 성공!\n");
+	return count;
 
     return 1;
 }
