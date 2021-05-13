@@ -2,13 +2,12 @@
 #include <string.h>
 
 typedef struct{
-    char name[60];
     char type[60];
     int year;
     int month;
     int age;
-    char vaccine[10];
-    char neutralization[10];
+    char vaccine;
+    char neutralization;
 } Dog;
 
 int addDog(Dog *d);

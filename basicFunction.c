@@ -1,12 +1,6 @@
 #include "basicFunction.h"
 
 int addDog(Dog *d){
-    printf("\n");
-    printf("이름? ");
-    scanf("%[^\n]s",d->name);
-
-    getchar();
-
     printf("강아지 종? ");
     scanf("%[^\n]s", d->type);
 
@@ -44,20 +38,20 @@ int addDog(Dog *d){
     getchar();
 
     do{
-        printf("예방주사 접촉 여부 (true/false)? ");
-        scanf("%[^\n]s", d->vaccine);
+        printf("예방주사 접촉 여부 (t/f)? ");
+        scanf("%c", &d->vaccine);
         getchar();
-        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+        if(d->vaccine == 't' || d->vaccine == 'f'){
             break;
         }
-        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+        printf("\n=> t / f, 둘중에 하나 선택해주세요.\n");
     }while(1);
 
     do{
-        printf("중성화 유뮤(true/false)? ");
-        scanf("%[^\n]s", d->neutralization);
+        printf("중성화 유뮤(t/f)? ");
+        scanf("%c", &d->neutralization);
         getchar();
-        if(strcmp(d->neutralization, "true")==0 || strcmp(d->neutralization, "false")==0){
+        if(d->neutralization == 't' || d->neutralization == 'f'){
             break;
         }
         printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
@@ -68,16 +62,10 @@ int addDog(Dog *d){
 }
 
 void readData(Dog *d){
-    printf("%13s %14s %9d/%d %9d %12s %17s\n", d->name, d->type, d->year, d->month, d->age, d->vaccine, d->neutralization);
+    printf("%14s %9d/%d %9d %12c %17c\n", d->type, d->year, d->month, d->age, d->vaccine, d->neutralization);
 }
 
 int updateData(Dog *d){
-    printf("\n");
-    printf("이름? ");
-    scanf("%[^\n]s", d->name);
-
-    getchar();
-
     printf("강아지 종? ");
     scanf("%[^\n]s", d->type);
 
@@ -114,21 +102,21 @@ int updateData(Dog *d){
 
     getchar();
 
-    do{
-        printf("예방주사 접촉 여부 (true/false)? ");
-        scanf("%[^\n]s", d->vaccine);
+     do{
+        printf("예방주사 접촉 여부 (t/f)? ");
+        scanf("%c", &d->vaccine);
         getchar();
-        if(strcmp(d->vaccine, "true")==0 || strcmp(d->vaccine, "false")==0){
+        if(d->vaccine == 't' || d->vaccine == 'f'){
             break;
         }
-        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+        printf("\n=> t / f, 둘중에 하나 선택해주세요.\n");
     }while(1);
 
     do{
-        printf("중성화 유뮤(true/false)? ");
-        scanf("%[^\n]s", d->neutralization);
+        printf("중성화 유뮤(t/f)? ");
+        scanf("%c", &d->neutralization);
         getchar();
-        if(strcmp(d->neutralization, "true")==0 || strcmp(d->neutralization, "false")==0){
+        if(d->neutralization == 't' || d->neutralization == 'f'){
             break;
         }
         printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
@@ -166,7 +154,7 @@ int selectMenu(){
 }
 
 void listData(Dog *d,int count){
-    printf("\nNo. %10s %13s %20s %10s %21s %20s\n", "이름", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
+    printf("\nNo. %13s %20s %10s %21s %20s\n", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
     printf("==========================================================================================\n");
     for(int i=0; i<count; i++){
         if( d[i].year == -1 || d[i].age == -1 ) continue;
@@ -187,57 +175,56 @@ int selectDataNo(Dog *d, int count){
 
 
 void saveData(Dog d[], int count){
-    FILE* fp;
+    // FILE* fp;
 
-	fp= fopen("dog.txt","wt");
+	// fp= fopen("dog.txt","wt");
 	
-	for(int i = 0; i < count; i++) {
-        fprintf(fp, "%s\n", d[i].name);
-        fprintf(fp, "%s\n", d[i].type);
-		fprintf(fp, "%d %d %d %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].type, d[i].vaccine, d[i].neutralization);
-	}
+	// for(int i = 0; i < count; i++) {
+    //     fprintf(fp, "%s\n", d[i].name);
+    //     fprintf(fp, "%s\n", d[i].type);
+	// 	fprintf(fp, "%d %d %d %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].type, d[i].vaccine, d[i].neutralization);
+	// }
 
-	fclose(fp);
-	printf("저장됨!\n");
-
+	// fclose(fp);
+	// printf("저장됨!\n");
 }
 
 int loadData(Dog *d){
-    int count=0;
-	FILE*fp;
+    // int count=0;
+	// FILE*fp;
 
-	fp = fopen("dog.txt", "r");
+	// fp = fopen("dog.txt", "r");
 
-    if(fp == NULL) {
-        printf("=> 로딩 실패!\n");
-        return count;
-    }
+    // if(fp == NULL) {
+    //     printf("=> 로딩 실패!\n");
+    //     return count;
+    // }
 
-	while( fscanf(fp, "%d", &(d[count].year)) != -1) {
-        fgets(d[count].name, sizeof(d[count].name), fp);
-        fgets(d[count].type, sizeof(d[count].name), fp);
-        fscanf(fp, "%d ", &(d[count].year));
-		fscanf(fp, "%d ", &(d[count].month));
-        fscanf(fp, "%d ", &(d[count].age));
-        //d[count].vaccine = '\0'; 
-        //d[count].neutralization = '\0';
+	// while( fscanf(fp, "%d", &(d[count].year)) != -1) {
+    //     fgets(d[count].name, sizeof(d[count].name), fp);
+    //     fgets(d[count].type, sizeof(d[count].name), fp);
+    //     fscanf(fp, "%d ", &(d[count].year));
+	// 	fscanf(fp, "%d ", &(d[count].month));
+    //     fscanf(fp, "%d ", &(d[count].age));
+    //     //d[count].vaccine = '\0'; 
+    //     //d[count].neutralization = '\0';
 		
 
-		int length = strlen(d[count].name);
-		d[count].name[length -1] = '\0';
+	// 	int length = strlen(d[count].name);
+	// 	d[count].name[length -1] = '\0';
 
-        length = strlen(d[count].type);
-		d[count].type[length -1] = '\0';
+    //     length = strlen(d[count].type);
+	// 	d[count].type[length -1] = '\0';
 
-		count++;
-	}
+	// 	count++;
+	// }
 
-    fclose(fp);
+    // fclose(fp);
 
 
 
-	printf("=> 로딩 성공!\n");
-	return count;
+	// printf("=> 로딩 성공!\n");
+	// return count;
 
     return 1;
 }

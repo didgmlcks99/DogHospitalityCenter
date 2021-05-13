@@ -8,7 +8,7 @@ int main(void){
     int curcount=0;
     int count = 0, menu;
     
-    count = loadData(dlist);
+    // count = loadData(dlist);
     curcount = count; 
 
     while (1){
@@ -47,10 +47,10 @@ int main(void){
                 if(deleteData(&dlist[no-1])) count --;       
            	 } 
         } 
-        else if (menu == 5){
-		     if (count==0) printf("데이터가 없습니다!\n");
-		     else saveData(dlist,curcount);
-	     }
+        // else if (menu == 5){
+		//      if (count==0) printf("데이터가 없습니다!\n");
+		//      else saveData(dlist,curcount);
+	    // }
         // else if(menu == 6){
 		// 	if(count > 0){
 		// 		searchType(dlist, count);
