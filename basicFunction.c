@@ -192,7 +192,9 @@ void saveData(Dog d[], int count){
 	fp= fopen("dog.txt","wt");
 	
 	for(int i = 0; i < count; i++) {
-		fprintf(fp, "%d %d %d %s %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].name, d[i].type, d[i].vaccine, d[i].neutralization);
+        fprintf(fp, "%s\n", d[i].name);
+        fprintf(fp, "%s\n", d[i].type);
+		fprintf(fp, "%d %d %d %s %s %s\n", d[i].year, d[i].month, d[i].age, d[i].type, d[i].vaccine, d[i].neutralization);
 	}
 
 	fclose(fp);
@@ -206,16 +208,31 @@ int loadData(Dog *d){
 
 	fp = fopen("dog.txt", "r");
 
+    if(fp == NULL) {
+        printf("=> 로딩 실패!\n");
+        return count;
+    }
+
 	while( fscanf(fp, "%d", &(d[count].year)) != -1) {
+        fgets(d[count].name, sizeof(d[count].name), fp);
+        fgets(d[count].type, sizeof(d[count].name), fp);
+        fscanf(fp, "%d ", &(d[count].year));
 		fscanf(fp, "%d ", &(d[count].month));
         fscanf(fp, "%d ", &(d[count].age));
-		fgets(d[count].name, sizeof(d[count].name), fp);
+        //d[count].vaccine = '\0'; 
+        //d[count].neutralization = '\0';
+		
 
 		int length = strlen(d[count].name);
 		d[count].name[length -1] = '\0';
 
+        length = strlen(d[count].type);
+		d[count].type[length -1] = '\0';
+
 		count++;
 	}
+
+    fclose(fp);
 
 
 
