@@ -3,7 +3,6 @@
 #include "additionalFunction.h"
 
 int main(void){
-    
     Dog dlist[100];
     int curcount=0;
     int count = 0, menu;

@@ -176,43 +176,38 @@ int selectDataNo(Dog *d, int count){
 void saveData(Dog d[], int count){
     FILE* fp;
 
-	fp= fopen("dog.txt","wt");
-	
-	for(int i = 0; i < count; i++) {
-        if(d[count].year < 0) continue; //?
-		fprintf(fp, "%d %d %d %c %c %s\n", d[i].year, d[i].month, d[i].age, d[i].vaccine, d[i].neutralization, d[i].type);
-	}
+    fp= fopen("dogData.txt","wt");
 
-	fclose(fp);
-	printf("저장됨!\n");
+    for(int i = 0; i < count; i++) {
+        if(d[count].year < 0) continue;
+            fprintf(fp, "%d %d %d %c %c %s\n", d[i].year, d[i].month, d[i].age, d[i].vaccine, d[i].neutralization, d[i].type);
+    }
 
+    fclose(fp);
+    printf("저장됨!\n");
 }
 
 int loadData(Dog *d){
-    int count=0;
-	FILE*fp;
+        int count=0;
+        FILE*fp;
 
-	fp = fopen("dog.txt", "r");
+        fp = fopen("dogData.txt", "r");
 
-    if(fp == NULL) {
-        printf("=> 파일 없음!\n");
-        return count;
-    }
+        if(fp == NULL) {
+            printf("=> 파일 없음!\n");
+            return count;
+        }
 
 	while( count < 100 ) {
         fscanf(fp, "%d ", &(d[count].year));
         if(feof(fp)) break;
-		fscanf(fp, "%d ", &(d[count].month));
+        fscanf(fp, "%d ", &(d[count].month));
         fscanf(fp, "%d ", &(d[count].age));
         fscanf(fp, "%c ", &(d[count].vaccine));
         fscanf(fp, "%c ", &(d[count].neutralization));
         fscanf(fp, "%[^\n]s", d[count].type);
-        //fgets(d[count].type, sizeof(d[count].type), fp);
-	
-        //int length = strlen(d[count].type);
-		//d[count].type[length -1] = '\0';
 
-		count++;
+        count++;
 	}
 
     fclose(fp);
