@@ -1,6 +1,33 @@
 #include "additionalFunction.h"
 
 void searchType(Dog *d, int count){
+	int isequal = 0;
+	int check = 0;
+	char typeS[60];
+
+	printf("(해당 견종과 같은 강아지 정보 출력)\n");
+	printf("견종? ");
+	scanf("%s", &typeS);
+
+	for (int i=0; i<count; i++) {
+		isequal = strcmp( d[i].type, typeS );
+		if ( isequal == 0 ) {  					//0이면 equal
+
+			if( check == 0 ) {
+				printf("\nNo. %13s %20s %10s %23s %21s\n", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
+  			    printf("==========================================================================================\n");
+			}
+			
+			printf("%2d.", i+1);
+			readData(&d[i]);
+			check ++;
+		}
+	}
+
+	if(check == 0) printf("=> 찾으시는 견종의 강아지가 존재하지 않습니다.\n");
+
+	return;
+
 }
 
 void searchAge(Dog *d, int count){

@@ -50,13 +50,13 @@ int main(void){
 		      if (count==0) printf("데이터가 없습니다!\n");
 		      else saveData(dlist,curcount);
 	     }
-        // else if(menu == 6){
-		// 	if(count > 0){
-		// 		searchType(dlist, count);
-		// 	}else{
-		// 		printf("=> 강아지 정보 (견종) 검색할 데이터 없습니다.\n");
-		// 	}
-		// }
+         else if(menu == 6){
+		 	if(count > 0){
+		 		searchType(dlist, count);
+		 	}else{
+		 		printf("=> 강아지 정보 (견종) 검색할 데이터 없습니다.\n");
+		 	}
+		 }
         else if(menu == 7){
 			if(count > 0){
 				searchAge(dlist, count);
