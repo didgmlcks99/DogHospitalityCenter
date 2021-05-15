@@ -7,20 +7,17 @@ void searchType(Dog *d, int count){
 
 	printf("(해당 견종과 같은 강아지 정보 출력)\n");
 	printf("견종? ");
-	scanf("%[^\n]s", &typeS);
+	scanf("%[^\n]s", typeS);
+
+	printf("\nNo. %13s %20s %10s %23s %21s\n", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
+  	printf("==========================================================================================\n");
 
 	for (int i=0; i<count; i++) {
-		isequal = strcmp( d[i].type, typeS );
-		if ( isequal == 0 ) {  					//0이면 equal
-
-			if( check == 0 ) {
-				printf("\nNo. %13s %20s %10s %23s %21s\n", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
-  			    printf("==========================================================================================\n");
-			}
-
+		if(d[i].year < 0) continue;
+		if(strstr(d[i].type, typeS)){
 			printf("%2d.", i+1);
 			readData(&d[i]);
-			check ++;
+			check++;
 		}
 	}
 
