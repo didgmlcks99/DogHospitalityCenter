@@ -22,7 +22,7 @@ int addDog(Dog *d){
                     break;
                 }
             }
-        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+        }printf("\n=> 현재 날짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
     }while(1);
 
     do{
@@ -54,7 +54,7 @@ int addDog(Dog *d){
         if(d->neutralization == 't' || d->neutralization == 'f'){
             break;
         }
-        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+        printf("\n=> t / f, 둘중에 하나 선택해주세요.\n");
     }while(1);
     
     printf("==> 추가됨\n"); 
@@ -87,7 +87,7 @@ int updateData(Dog *d){
                     break;
                 }
             }
-        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+        }printf("\n=> 현재 날짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
     }while(1);
 
     do{
@@ -103,7 +103,7 @@ int updateData(Dog *d){
     getchar();
 
      do{
-        printf("예방주사 접촉 여부 (t/f)? ");
+        printf("예방주사 접종 여부 (t/f)? ");
         scanf("%c", &d->vaccine);
         getchar();
         if(d->vaccine == 't' || d->vaccine == 'f'){
@@ -119,7 +119,7 @@ int updateData(Dog *d){
         if(d->neutralization == 't' || d->neutralization == 'f'){
             break;
         }
-        printf("\n=> true/false, 둘중에 하나 선택해주세요.\n");
+        printf("\n=> t / f, 둘중에 하나 선택해주세요.\n");
     }while(1);
 
     printf("==> 수정됨!\n");
@@ -145,7 +145,7 @@ int selectMenu(){
     printf("4. 삭제\n");
     printf("5. 저장\n");
     printf("6. 지정 견종인 강아지 정보 검색\n");
-    printf("7. 지정 나이 보다 동일하거나 더 어린 강아지 정보 겁색\n");
+    printf("7. 지정 나이 보다 동일하거나 더 어린 강아지 정보 검색\n");
     printf("8. 지정 날짜와 동일하거나 더 최근에 들어온 강아지 정보 검색\n");
     printf("0. 종료\n\n");
     printf("=> 원하는 메뉴는? ");
@@ -184,7 +184,7 @@ void saveData(Dog d[], int count){
     }
 
     fclose(fp);
-    printf("저장됨!\n");
+    printf("=> 저장됨!\n");
 }
 
 int loadData(Dog *d){
