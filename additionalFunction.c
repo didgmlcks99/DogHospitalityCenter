@@ -79,7 +79,7 @@ void searchDateEntered(Dog *d, int count){
                     break;
                 }
             }
-        }printf("\n=> 현재 잘짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
+        }printf("\n=> 현재 날짜 (2021/5) 보다 앞서는 날짜 지정 못합니다.\n");
     }while(1);
 
 	printf("\nNo. %13s %20s %10s %23s %21s\n", "견종", "들어온날짜", "나이", "예방접종여부", "중성화유뮤");
@@ -101,5 +101,5 @@ void searchDateEntered(Dog *d, int count){
 			}
 		}
 	}
-	if(scnt == 0) printf("=> 해당 날짜보다 동일하거 최근에 들어온 강아지 없음\n");
+	if(scnt == 0) printf("=> 해당 날짜와 동일하거나 최근에 들어온 강아지 없음\n");
 }
